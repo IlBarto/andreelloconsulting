@@ -210,7 +210,7 @@ function sydney_google_fonts() {
 		), 'https://fonts.googleapis.com/css' );
 	}
 
-	return $fonts_url;	
+	return $fonts_url;
 }
 endif;
 
@@ -329,7 +329,7 @@ function sydney_header_clone() {
 	$site_header_type 	=get_theme_mod('site_header_type');
 
 	if ( ( $front_header_type == 'nothing' && is_front_page() ) || ( $site_header_type == 'nothing' && !is_front_page() ) ) { ?>
-	
+
 	<div class="header-clone"></div>
 
 	<?php }
@@ -453,7 +453,7 @@ function sydney_welcome_admin_notice() {
 	if ( ! PAnD::is_admin_notice_active( 'sydney-welcome-forever' ) ) {
 		return;
 	}
-	
+
 	?>
 	<div data-dismissible="sydney-welcome-forever" class="sydney-admin-notice updated notice notice-success is-dismissible">
 
@@ -465,3 +465,47 @@ function sydney_welcome_admin_notice() {
 }
 add_action( 'admin_init', array( 'PAnD', 'init' ) );
 add_action( 'admin_notices', 'sydney_welcome_admin_notice' );
+
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function andreello_add_dashboard_widgets() {
+
+	wp_add_dashboard_widget(
+		'andreello_theme_analytics_dashboard',         // Widget slug.
+		'Imelab Theme Setup Widget',         // Title.
+		'andreello_setup_dashboard_widget_function' // Display function.
+	);
+}
+add_action( 'wp_dashboard_setup', 'andreello_add_dashboard_widgets' );
+
+/**
+ * Create the function to output the contents of our Dashboard Widget.
+ */
+function andreello_setup_dashboard_widget_function() {
+	$mods = get_theme_mods();
+	$domain = "andreello";
+	$default = "barto.jacopo@gmail.com";
+
+	$str = "";
+
+	if (!isset($mods['andreello_contact_form_mail']) || 0 === strcmp($mods['andreello_contact_form_mail'], $default)) {
+		$str .= "<p>".esc_html( translate( 'You have to configure the mail for the contact form in theme options', $domain ) )."</p>";
+	}
+
+	if (!isset($mods['andreello_message_from_address']) || 0 === strcmp($mods['andreello_message_from_address'], $default)) {
+		$str .= "<p>".esc_html( translate( 'You have to configure the address that will send the form mails', $domain ) )."</p>";
+	}
+
+	if (!isset($mods['andreello_analytics_code']) || ($mods['andreello_analytics_code'] === "")) {
+		$str .= "<p>".esc_html( translate( 'You have to configure the Analytics in theme options', $domain ) )."</p>";
+	}
+
+	if(empty($str)) {
+		esc_html_e('Everything is fine. Thanks you for using this theme!', $domain);
+	} else {
+		echo $str;
+	}
+}

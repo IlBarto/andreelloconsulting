@@ -9,6 +9,9 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<?php
+$analytics = get_theme_mod('imelab_analytics_code', '');
+echo $analytics; ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -40,7 +43,7 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>" alt="<?php bloginfo('name'); ?>" /></a>
 		        <?php else : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>	        
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		        <?php endif; ?>
 				</div>
 				<div class="col-md-8 col-sm-4 col-xs-12">
@@ -71,4 +74,4 @@
 
 	<div id="content" class="page-wrap">
 		<div class="container content-wrapper">
-			<div class="row">	
+			<div class="row">

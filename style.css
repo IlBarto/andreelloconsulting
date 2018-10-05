@@ -15,6 +15,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Sydney is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 */
 
+/*--------------------------------------------------------------
+Andreello Custom
+--------------------------------------------------------------*/
+.form-control {
+	display: block;
+}
 
 /*--------------------------------------------------------------
 Social
@@ -668,7 +674,7 @@ Header
 	}
 	.admin-bar:not(.siteScrolled) .slide-item {
 		background-position: 50% 0 !important;
-	}	
+	}
 	.header-image {
 		display: none;
 		position: relative;
@@ -691,7 +697,7 @@ Header
 	}
 	.site-description:empty {
 		margin: 0;
-	}	
+	}
 	.site-header.fixed {
 		position: fixed;
 	}
@@ -1449,7 +1455,7 @@ Blog
 	}
 	.classic-alt .meta-post a {
 		color: #d65050;
-	}	
+	}
 /*--------------------------------------------------------------
 Widgets
 --------------------------------------------------------------*/
@@ -1611,7 +1617,7 @@ Blog single
 	}
 	.tags-links a:first-of-type {
 		margin-left: 0;
-	}	
+	}
 	/* comment post */
 /*--------------------------------------------------------------
 Comments
@@ -1845,7 +1851,7 @@ Preloader
 	    text-align: center;
 	    transition: opacity 0.2s ease 0s;
 	    width: 100%;
-	    z-index: 9999;	    
+	    z-index: 9999;
 	}
 	.preloader .spinner {
 	    height: 30px;
@@ -1992,11 +1998,11 @@ Panels
 		padding-left: 0 !important;
 		padding-right: 0 !important;
 	}
-	/* SO post carousel fix */	
+	/* SO post carousel fix */
 	.sow-carousel-thumbnail .overlay {
 	    position: static;
 	    height: 100% !important;
-	}		
+	}
 /* Counter
 -------------------------------------------------------------- */
 	.roll-counter {
@@ -2488,7 +2494,7 @@ Panels
 	.hentry .roll-testimonials blockquote {
 		background-color: transparent;
 		color: inherit;
-	}	
+	}
 	.roll-testimonials .name {
 		font-family: "Raleway", sans-serif;
 		font-size: 18px;
@@ -3205,7 +3211,7 @@ ol.flex-control-nav.flex-control-thumbs li img:not(.flex-active) {
 /* Lightbox video
 -------------------------------------------------------------- */
 .sydney-video .video-text,
-.sydney-video .toggle-popup, 
+.sydney-video .toggle-popup,
 .sydney-video .close-popup {
 	display: none;
 }
@@ -3327,7 +3333,7 @@ div[class*="elementor-widget-wp-widget-sydney"] h5 {
 .sydney-breadcrumbs a {
     text-decoration: underline;
     margin: 0 3px;
-    text-decoration-color: #bababa;	
+    text-decoration-color: #bababa;
 }
 /* Media Queries
 -------------------------------------------------------------- */
@@ -3406,12 +3412,12 @@ div[class*="elementor-widget-wp-widget-sydney"] h5 {
   		}
 		.blog-post:nth-of-type(2n+1) {
 		    clear: left;
-		}  				
+		}
 	}
 	@media only screen and (max-width: 1024px) {
 		.site-header.fixed {
 			position: static !important;
-		}		
+		}
 		.slides-container .slide-item,
 		.panel-row-style {
 			background-attachment: scroll !important;
@@ -3435,7 +3441,7 @@ div[class*="elementor-widget-wp-widget-sydney"] h5 {
 		}
 		.header-clone {
 			display: none;
-		}		
+		}
 		.posts-navigation {
 			overflow: hidden;
 			margin-bottom: 30px;
@@ -3445,7 +3451,7 @@ div[class*="elementor-widget-wp-widget-sydney"] h5 {
 		}
 		.btn-menu {
 			display: block;
-		}		
+		}
 	}
 	@media only screen and (max-width: 780px) {
 		.roll-client .client-item img {
